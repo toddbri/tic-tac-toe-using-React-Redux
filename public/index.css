@@ -1,0 +1,35 @@
+.board{
+  width : 615px;
+  height : 615px;
+  margin: auto;
+  padding-top: 50px;
+}
+
+.boardContainer {
+
+}
+.title {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.cell{
+  width : 200px;
+  height : 200px;
+  display: inline-block;
+  background-color: rgb(193, 153, 226);
+  border : 1px solid white;
+  font-size: 220px;
+  text-align: center;
+
+
+}
+
+.message{
+  text-align : center;
+
+}
+
+.restart{
+  text-align : center;
+}
