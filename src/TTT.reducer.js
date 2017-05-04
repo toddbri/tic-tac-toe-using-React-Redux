@@ -17,12 +17,10 @@ export default function tttReducer(state, action){
         case ('move'):
           let newMessage;
           let gameFinished = false;
-          console.log("selected: " + action.cell);
           if (state.board[action.cell] === null){
             let tmpBoard = state.board.slice();
             tmpBoard[action.cell] = state.currentPlayer;
             let winner = check4Winner(tmpBoard);
-            console.log('winningCells: ' + winner[1]);
             if (winner[0] != 0){
               let tmpxwins = winner[0] === 'X' ? state.xwins + 1: state.xwins;
               let tmpowins = winner[0] === 'O' ? state.owins + 1: state.owins;
@@ -31,10 +29,8 @@ export default function tttReducer(state, action){
               return Object.assign({},state,{board: tmpBoard, message: newMessage, gameOver: gameFinished, xwins: tmpxwins, owins: tmpowins, winningCells: winner[1]});
             }
             let cellsTaken = tmpBoard.reduce( (accum, item ) => {
-              console.log("item "+item);
               return accum + (item === null ? 0 : 1)}, 0 );
 
-            console.log("cellsTaken "+cellsTaken);
             if(cellsTaken === 9){
               newMessage = "It's a Draw";
               gameFinished = true;
@@ -48,7 +44,6 @@ export default function tttReducer(state, action){
 
   }
   if (action.type==='restart'){
-    console.log("restarting");
     return Object.assign( {}, INITIAL_STATE.gameState,{xwins: state.xwins, owins: state.owins});
   }
   return state;
@@ -91,7 +86,6 @@ export default function tttReducer(state, action){
         winner = pastMoves[2];
         winningCells = winningCells.concat([2,4,6]);
       }
-      console.log("wc: " + winningCells);
       return [winner, winningCells];
     }
 }
