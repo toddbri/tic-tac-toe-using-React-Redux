@@ -1,12 +1,12 @@
+
 .board{
   width : 615px;
   height : 615px;
   margin: auto;
-  padding-top: 20px;
 }
 
 .boardContainer {
-
+  text-align: center;
 }
 .title {
   text-align: center;
@@ -17,7 +17,6 @@
 .cell{
   width : 200px;
   height : 200px;
-  /*display: inline-block;*/
   float:left;
   background-color: rgb(193, 153, 226);
   border : 2px solid white;
@@ -36,4 +35,52 @@
 
 .restart{
   text-align : center;
+}
+
+.owins {
+  float: left;
+}
+
+.xwins {
+  float: right;
+}
+.scoreBoard {
+  width: 600px;
+  margin: auto;
+  height: 30px;
+  font-size: 20px;
+}
+
+
+.blink {
+color: red;
+animation: blink 1s infinite;
+
+}
+.blinkred {
+color: red;
+animation: blink 1s infinite;
+
+}
+
+.blinkgreen {
+color: green;
+animation: blink 1s infinite;
+
+}
+
+@keyframes blink {
+
+  0% {
+    color: black;
+  }
+
+  50% {
+    color: red;
+  }
+
+  100% {
+    color: black;
+  }
+
 }

@@ -12,7 +12,10 @@ const INITIAL_STATE = {
     board: [null,null,null,null,null,null,null,null,null],
     currentPlayer: 'X',
     message: "Player X's Turn",
-    gameOver: false
+    gameOver: false,
+    xwins: 0,
+    owins: 0,
+    winningCells: []
   }
 
 };
