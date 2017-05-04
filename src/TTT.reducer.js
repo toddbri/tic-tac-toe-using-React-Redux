@@ -30,7 +30,7 @@ export default function tttReducer(state, action){
 
             console.log("cellsTaken "+cellsTaken);
             if(cellsTaken === 9){
-              newMessage = "Too Bad! AWFUL JOB BOTH OF YOU";
+              newMessage = "It's a Draw";
               gameFinished = true;
               return Object.assign({},state,{board: tmpBoard, message: newMessage, gameOver: gameFinished});
             }

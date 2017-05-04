@@ -15,7 +15,7 @@ export default class TTT extends React.Component {
 
         </div>
         <div className="message">{this.props.gameState.message}</div>
-        {this.props.gameState.gameOver === true ? <div className="restart"><button onClick={this.props.restart}>Restart</button></div>:null}
+        {this.props.gameState.gameOver === true ? <div className="restart"><button onClick={this.props.restart}>Play Again</button></div>:null}
       </div>
     )
   }
