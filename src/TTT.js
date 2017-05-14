@@ -9,7 +9,7 @@ export default class TTT extends React.Component {
         <div className="scoreBoard"><div className="owins">O wins: {this.props.gameState.owins}</div><div className="xwins">X wins: {this.props.gameState.xwins}</div></div>
         <div className="board">
           {board.map(idx => {
-            return <div key={idx} onClick={() => this.props.select(idx)} className={this.props.gameState.winningCells.indexOf(idx) != -1 ? "cell blink":"cell"}>{this.props.gameState.board[idx]}</div>
+            return <div key={idx} onClick={() => this.props.select(idx)} className={this.props.gameState.winningCells.indexOf(idx) !== -1 ? "cell blink":"cell"}>{this.props.gameState.board[idx]}</div>
 
           })}
 

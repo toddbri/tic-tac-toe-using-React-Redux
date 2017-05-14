@@ -1,27 +1,29 @@
-export default function tttReducer(state, action){
-  const INITIAL_STATE = {
-    gameState: {
-      board: [null,null,null,null,null,null,null,null,null],
-      currentPlayer: 'X',
-      message: "Player X's Turn",
-      gameOver: false,
-      xwins: 0,
-      owins: 0,
-      winningCells: []
-    }
+const INITIAL_STATE = {
+  gameState: {
+    board: [null,null,null,null,null,null,null,null,null],
+    currentPlayer: 'X',
+    message: "Player X's Turn",
+    gameOver: false,
+    xwins: 0,
+    owins: 0,
+    winningCells: []
+  }
 
-  };
+};
+
+export default function tttReducer(state = INITIAL_STATE, action){
+
 
   if (state.gameOver === false){
       switch (action.type) {
-        case ('move'):
+        case 'move':
           let newMessage;
           let gameFinished = false;
           if (state.board[action.cell] === null){
             let tmpBoard = state.board.slice();
             tmpBoard[action.cell] = state.currentPlayer;
             let winner = check4Winner(tmpBoard);
-            if (winner[0] != 0){
+            if (winner[0] !== 0){
               let tmpxwins = winner[0] === 'X' ? state.xwins + 1: state.xwins;
               let tmpowins = winner[0] === 'O' ? state.owins + 1: state.owins;
               newMessage = state.currentPlayer + " has won";
@@ -40,7 +42,11 @@ export default function tttReducer(state, action){
             newMessage = nextPlayer === "X"? "Player X's Turn": "Player O's Turn";
             return Object.assign({},state,{board: tmpBoard, currentPlayer: nextPlayer, message: newMessage});
           }
+          break;
+        default:
+          return Object.assign({}, state);
         }
+
 
   }
   if (action.type==='restart'){

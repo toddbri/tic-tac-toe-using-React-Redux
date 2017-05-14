@@ -6,7 +6,6 @@ import * as Redux from 'redux';
 import * as ReactRedux from 'react-redux';
 import tttReducer from './TTT.reducer';
 
-
 const INITIAL_STATE = {
   gameState: {
     board: [null,null,null,null,null,null,null,null,null],
@@ -20,22 +19,20 @@ const INITIAL_STATE = {
 
 };
 
-
 function reducer (state = INITIAL_STATE, action){
     return {
       gameState: tttReducer(state.gameState, action)
     }
 }
 
-
 const TTTContainer = ReactRedux.connect(
   state => ({gameState: state.gameState}),
   dispatch => ({
-    select : (idx) => dispatch({
-      type : 'move',
-      cell : idx
-    }),
-    restart: () => dispatch({type: 'restart'})
+      select : (idx) => dispatch({
+                                  type : 'move',
+                                  cell : idx
+                                }),
+      restart: () => dispatch({type: 'restart'})
   })
 )(TTT);
 

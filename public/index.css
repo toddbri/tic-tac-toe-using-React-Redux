@@ -53,23 +53,52 @@
 
 
 .blink {
-color: red;
 animation: blink 1s infinite;
 
 }
 .blinkred {
 color: red;
-animation: blink 1s infinite;
+animation: blinkred 1s infinite;
 
 }
 
 .blinkgreen {
 color: green;
-animation: blink 1s infinite;
+animation: blinkgreen 0.5s infinite;
 
 }
 
 @keyframes blink {
+
+  0% {
+    color: black;
+  }
+
+  50% {
+    color: green;
+  }
+
+  100% {
+    color: black;
+  }
+
+}
+@keyframes blinkgreen {
+
+  0% {
+    color: black;
+  }
+
+  50% {
+    color: green;
+  }
+
+  100% {
+    color: black;
+  }
+
+}
+@keyframes blinkgreen {
 
   0% {
     color: black;
